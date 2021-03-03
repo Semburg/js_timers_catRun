@@ -14,27 +14,21 @@ let rightWall = (window.innerWidth - catWidth) + "px"
 
 let rotationUndex = 180;
 
-console.log(rightWall)
-
 function walk() {
     disableDoubleRuns()
 
-    console.log("walk")
     clearCat = setInterval(animateCat, 10)
     btn1.disabled
 }
 function standingStill() {
     disableDoubleRuns()
-    console.log("stop!")
 }
 function turnAround() {
     direction *= -1
-    console.log("around")
     rotateCat()
 }
 function speedUp() {
     disableDoubleRuns()
-    console.log("speed up!")
     if (direction != 0) {
         clearCat2 = setInterval(animateCat, 2)
     }
@@ -49,9 +43,6 @@ function animateCat() {
         rotateCat()
         runToRight()
 
-        console.log(cat.style.left)
-        console.log(rightWall)
-        // console.log(leftPos)
     }
     if (cat.style.left == "0px") {
         direction = 1;
@@ -63,11 +54,6 @@ function animateCat() {
 function runToRight() {
     leftPos += direction
     cat.style.left = `${leftPos}px`;
-
-    console.log(window.innerWidth - catWidth)
-
-    console.log(window.innerWidth)
-    console.log(catWidth)
 }
 
 function rotateCat(){
